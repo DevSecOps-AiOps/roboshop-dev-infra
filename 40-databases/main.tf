@@ -10,7 +10,7 @@ resource "aws_instance" "mongodb" {
 
     tags = merge (
         { 
-            Name = "${local.common_name}"
+            Name = "${local.common_name}-mongodb"
         }, 
         local.common_tags
     ) 
@@ -22,7 +22,7 @@ resource "terraform_data" "mongodb" {
     ]
     connection {
         type = "ssh"
-        user = "ec2_user"
+        user = "ec2-user"
         password = "DevOps321"
         host = aws_instance.mongodb.private_ip
     }
@@ -63,7 +63,7 @@ resource "terraform_data" "redis" {
     ]
     connection {
         type = "ssh"
-        user = "ec2_user"
+        user = "ec2-user"
         password = "DevOps321"
         host = aws_instance.redis.private_ip
     }
@@ -104,7 +104,7 @@ resource "terraform_data" "rabbitmq" {
     ]
     connection {
         type = "ssh"
-        user = "ec2_user"
+        user = "ec2-user"
         password = "DevOps321"
         host = aws_instance.rabbitmq.private_ip
     }
