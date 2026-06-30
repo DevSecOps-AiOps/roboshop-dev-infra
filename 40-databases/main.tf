@@ -27,7 +27,7 @@ resource "terraform_data" "mongodb" {
         host = aws_instance.mongodb.private_ip
     }
     provisioner "file" {
-        source  = "bootstrap"
+        source  = "bootstrap.sh"
         destination = "/tmp/bootstrap.sh"
     }
     provisioner "remote-exec" {
@@ -68,7 +68,7 @@ resource "terraform_data" "redis" {
         host = aws_instance.redis.private_ip
     }
     provisioner "file" {
-        source  = "bootstrap"
+        source  = "bootstrap.sh"
         destination = "/tmp/bootstrap.sh"
     }
     provisioner "remote-exec" {
@@ -109,7 +109,7 @@ resource "terraform_data" "rabbitmq" {
         host = aws_instance.rabbitmq.private_ip
     }
     provisioner "file" {
-        source  = "bootstrap"
+        source  = "bootstrap.sh"
         destination = "/tmp/bootstrap.sh"
     }
     provisioner "remote-exec" {
