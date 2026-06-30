@@ -21,7 +21,7 @@ resource "aws_security_group_rule" "mongodb_user" {
 
 }
 resource "aws_security_group_rule" "mongodb_bastion" {
-    type = "egress"
+    type = "ingress"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
