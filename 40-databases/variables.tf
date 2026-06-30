@@ -12,3 +12,6 @@ variable "zone_id" {
 variable "domain_name" {
     default = "chinnu.store"
 }
+variable "mysql_root_password" {
+    type = string 
+}
